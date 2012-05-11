@@ -13,12 +13,14 @@ In order to get the app running, you can setup it by executing the following com
 
 ```
 $ git clone git://github.com/gregoriokusowski/remotr.git
-$ bundle
+$ cd remotr/ && bundle
 ```
+
+Note: Just in case you don't have bundler, or don't want to use it, it's possible to install sinatra manually with ```gem install sinatra```.
 
 ### Up and Running
 
-If you are ready with the setup steps, feel free to run the following:
+If you are ready with the setup steps, feel free to run the following on the remotr folder:
 
 ```
 $ ruby remotr.rb
@@ -40,3 +42,7 @@ So everything you should do now, is access ```http://192.168.1.5:4567/show/next`
   * Presentation to open and show # like ``` $ remotr foo.key ```
   * Port # like ``` $ remotr --port 1233 ```
   * Password # maybe prompt it :)
+
+### License
+
+remotr is released under The MIT License (MIT).
