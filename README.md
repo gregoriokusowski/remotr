@@ -30,9 +30,9 @@ This will start a sinatra server on your machine, on port 4567.
 
 ### Usage
 
-First of all, your Keynote presentation, should me opened at Play mode. ( This part can be improved )
+First of all, your Keynote presentation, should be opened at Play mode. ( This part can be improved )
 Let's say that your machine's IP address is 192.168.1.5.
-So everything you should do now, is access ```http://192.168.1.5:4567/show/next``` to advance, or ```http://192.168.1.5:4567/show/next``` to go back.
+So everything you should do now, is access ```http://192.168.1.5:4567/show/next``` to advance, or ```http://192.168.1.5:4567/show/previous``` to go back.
 
 ### Todo
 
