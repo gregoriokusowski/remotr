@@ -1,28 +1,28 @@
 <html>
+  <head>
+  </head>
   <body>
     <h3>Remotr</h3>
-    <div id="notes"></div>
+    <div id="notes_content"></div>
     <p>
-      <a name="notes" href="#">note</a>
-    	<a name="previous" href="#">previous</a>
-      <a name="next" href="#">next</a>
+    	<a id="previous" href="#" title="previous"> << </a>
+      <a id="notes" href="#">notes</a>
+      <a id="next" href="#"> >> </a>
     </p>
   </body>
 
   <script type="text/javascript" src="chibi-min.js"></script>
   <script type="text/javascript">
-    function setup_buttons(link){
-      click_to = $(link).attr('name');
-      if(click_to === "notes"){
-        $(link).on('click', function(){
-          $().ajax("/notes/current", "", function(content){
-            $("#notes").html(content);
-          });
-        });
-      }else{
-        $(link).on('click', function(){ $().ajax("/show/"+click_to); } );
-      }
-    }
-    $("a").loop(setup_buttons);
+    $("#notes").on('click',function(){
+      $().ajax("/notes/current", null, function(result){
+        $("#notes_content").html(result);
+      });
+    });
+    $("#previous").on('click',function(){
+      $().ajax("/show/previous");
+    });
+    $("#next").on('click',function(){
+      $().ajax("/show/next");
+    });
   </script>
 </html>
