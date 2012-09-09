@@ -15,14 +15,12 @@ get '/show/:command' do
 end
 
 get '/notes/current' do
-  p "requesting notes"
-  notes = %x[
+  notes = %x{
             osascript -e 'tell application "Keynote"
               tell front slideshow
                 get notes of current slide
               end tell
             end tell'
-          ]
-  p $?.inspect
-  notes = "Não foi possível carregar as notas desse slide." if $?.exitstatus != 0
+          }
+  notes || "Não foi possível carregar as notas desse slide."
 end
