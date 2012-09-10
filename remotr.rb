@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'sinatra'
 
 get '/' do
@@ -5,6 +6,7 @@ get '/' do
 end
 
 get '/show/:command' do
+  p "runnin' command #{params[:command]}"
   %x[
     osascript -e 'Tell application "Keynote"
       show #{params[:command]}
@@ -13,11 +15,12 @@ get '/show/:command' do
 end
 
 get '/notes/current' do
-  %x[
-    osascript -e 'tell application "Keynote"
-      tell front slideshow
-        get notes of current slide
-      end tell
-    end tell'
-  ]
+  notes = %x{
+            osascript -e 'tell application "Keynote"
+              tell front slideshow
+                get notes of current slide
+              end tell
+            end tell'
+          }
+  notes || "Não foi possível carregar as notas desse slide."
 end
