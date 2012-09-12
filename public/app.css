@@ -1,0 +1,31 @@
+html{
+  with:90%;
+  font-family:  Arial;
+  font-size: 5em;
+}
+
+ul.options{
+  display: inline;
+}
+
+ul.options li{
+  color: white;
+  display: block;
+  padding: 15px 0 15px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+ul.options li.notes{
+  background: green;
+}
+
+ul.options li.direction{
+  background: blue;
+}
+
+div#notes_content{
+  width: 90%;
+  margin: 0 auto;
+  word-wrap: break-word;
+}

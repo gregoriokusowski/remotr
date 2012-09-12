@@ -32,7 +32,11 @@ This will start a sinatra server on your machine, on port 4567.
 
 First of all, your Keynote presentation, should be opened at Play mode. ( This part can be improved )
 Let's say that your machine's IP address is 192.168.1.5.
-So everything you should do now, is access ```http://192.168.1.5:4567/show/next``` to advance, or ```http://192.168.1.5:4567/show/previous``` to go back.
+So everything you should do now, is access ```http://192.168.1.5:4567/show/next``` to advance, ```http://192.168.1.5:4567/show/previous``` to go back and to get the notes from the current page ```http://192.168.1.5:4567/notes/current``` .
+
+
+There is the option to access ```http://192.168.1.5:4567/``` and use it to navigate with an UI instead of just access the URLs by hand.
+
 
 ### Todo
 

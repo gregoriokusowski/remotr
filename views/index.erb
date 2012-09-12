@@ -1,28 +1,29 @@
 <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="app.css">
+  </head>
   <body>
-    <h3>Remotr</h3>
-    <div id="notes"></div>
-    <p>
-      <a name="notes" href="#">note</a>
-    	<a name="previous" href="#">previous</a>
-      <a name="next" href="#">next</a>
-    </p>
+    <!-- <h3>Remotr</h3> -->
+    <ul class="options">
+      <li class="direction" id="previous">Previous</li>
+      <li class="notes" id="notes">Notes</li>
+      <li class="direction" id="next">Next</li>
+    </ul>
+    <div id="notes_content"></div>
   </body>
 
   <script type="text/javascript" src="chibi-min.js"></script>
   <script type="text/javascript">
-    function setup_buttons(link){
-      click_to = $(link).attr('name');
-      if(click_to === "notes"){
-        $(link).on('click', function(){
-          $().ajax("/notes/current", "", function(content){
-            $("#notes").html(content);
-          });
-        });
-      }else{
-        $(link).on('click', function(){ $().ajax("/show/"+click_to); } );
-      }
-    }
-    $("a").loop(setup_buttons);
+    $("#notes").on('click',function(){
+      $().ajax("/notes/current", null, function(result){
+        $("#notes_content").html(result);
+      });
+    });
+    $("#previous").on('click',function(){
+      $().ajax("/show/previous");
+    });
+    $("#next").on('click',function(){
+      $().ajax("/show/next");
+    });
   </script>
 </html>
