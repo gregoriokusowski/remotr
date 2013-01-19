@@ -17,7 +17,10 @@
       <header>
         <h1>Remotr</h1>
         <p>A Sinatra application that enables remote navigation through Keynote slides.</p>
+
         <p class="view"><a href="https://github.com/gregoriokusowski/remotr">View the Project on GitHub <small>gregoriokusowski/remotr</small></a></p>
+
+
         <ul>
           <li><a href="https://github.com/gregoriokusowski/remotr/zipball/master">Download <strong>ZIP File</strong></a></li>
           <li><a href="https://github.com/gregoriokusowski/remotr/tarball/master">Download <strong>TAR Ball</strong></a></li>
@@ -39,12 +42,14 @@
 <p>In order to get the app running, you can setup it by executing the following commands:</p>
 
 <pre><code>$ git clone git://github.com/gregoriokusowski/remotr.git
-$ bundle
+$ cd remotr/ &amp;&amp; bundle
 </code></pre>
+
+<p>Note: Just in case you don't have bundler, or don't want to use it, it's possible to install sinatra manually with <code>gem install sinatra</code>.</p>
 
 <h3>Up and Running</h3>
 
-<p>If you are ready with the setup steps, feel free to run the following:</p>
+<p>If you are ready with the setup steps, feel free to run the following on the remotr folder:</p>
 
 <pre><code>$ ruby remotr.rb
 </code></pre>
@@ -53,11 +58,11 @@ $ bundle
 
 <h3>Usage</h3>
 
-<p>First of all, your Keynote presentation, should me opened at Play mode. ( This part can be improved )</p>
+<p>First of all, your Keynote presentation, should be opened at Play mode. ( This part can be improved )
+Let's say that your machine's IP address is 192.168.1.5.
+So everything you should do now, is access <code>http://192.168.1.5:4567/show/next</code> to advance, <code>http://192.168.1.5:4567/show/previous</code> to go back and to get the notes from the current page <code>http://192.168.1.5:4567/notes/current</code> .</p>
 
-<p>Let's say that your machine's IP address is 192.168.1.5.</p>
-
-<p>So everything you should do now, is access <code>http://192.168.1.5:4567/show/next</code> to advance, or <code>http://192.168.1.5:4567/show/next</code> to go back.</p>
+<p>There is the option to access <code>http://192.168.1.5:4567/</code> and use it to navigate with an UI instead of just access the URLs by hand.</p>
 
 <h3>Todo</h3>
 
@@ -74,7 +79,9 @@ $ bundle
 <li>Password # maybe prompt it :)</li>
 </ul>
 </li>
-</ul>
+</ul><h3>License</h3>
+
+<p>remotr is released under The MIT License (MIT).</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/gregoriokusowski">gregoriokusowski</a></p>
